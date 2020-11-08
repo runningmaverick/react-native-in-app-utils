@@ -48,7 +48,7 @@ RCT_EXPORT_MODULE()
                 break;
             }
             case SKPaymentTransactionStatePurchased: {
-                NSString *key = RCTKeyForInstance(transaction.payment.productIdentifier);
+                NSString *key = transaction.payment.productIdentifier;
                 RCTResponseSenderBlock callback = _callbacks[key];
                 if (callback) {
                     NSDictionary *purchase = [self getPurchaseData:transaction];
